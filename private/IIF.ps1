@@ -1,0 +1,1 @@
+Function IIf($If, $Right, $Wrong) { If ($If) { $Right } Else { $Wrong } }

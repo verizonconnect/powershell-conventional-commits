@@ -1,0 +1,22 @@
+{
+	"convention": {
+		"commitTypes": [
+			"feat",
+			"fix",
+			"perf",
+			"refactor",
+			"style",
+			"test",
+			"build",
+			"ops",
+			"docs",
+			"merge",
+			"chore",
+			"ci"
+		],
+		"featureCommitTypes": [
+			"feat"
+		],
+		"ignoreNonConventionCommits": "True"
+	}
+}
