@@ -1,6 +1,6 @@
 # powershell-conventional-commits
 
-This is a PowerShell module that will make use of (Conventional Commits)[https://www.conventionalcommits.org/en/v1.0.0/] to calculate version numbers.
+This is a PowerShell module that will make use of [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to calculate version numbers.
 
 ## License
 
