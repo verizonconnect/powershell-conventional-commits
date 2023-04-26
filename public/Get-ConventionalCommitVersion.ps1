@@ -2,10 +2,10 @@ function Get-ConventionalCommitVersion {
     [cmdletbinding()]
     param (
         [string] $CommitAnchor = 'HEAD',
-        [string] $Path = ''
+        [string] $ConfigPath = ''
     )
 
-    $config = Get-Config -Path $Path
+    $config = Get-Config -Path $ConfigPath
 
     $newVersion = Get-Version -CommitAnchor $CommitAnchor -Convention $config.Convention
 
