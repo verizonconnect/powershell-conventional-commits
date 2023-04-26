@@ -16,7 +16,7 @@
   ModuleVersion     = '1.0.0'
 
   # ID used to uniquely identify this module
-  GUID              = 'a97d4a7b-5064-4ede-be54-d5ff40318716'
+  GUID              = '5f26d86f-4223-4a74-9e24-77e66698e865'
 
   # Author of this module
   Author            = 'Verizon Connect'
