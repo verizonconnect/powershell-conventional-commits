@@ -27,8 +27,6 @@
   # Copyright statement for this module
   Copyright         = '(c) 2023 Verizon Connect IRL Limited. All rights reserved.'
 
-  LicenseUri = 'https://github.com/verizonconnect/powershell-conventional-commits/blob/main/LICENSE'
-
   # Description of the functionality provided by this module
   Description       = 'Uses conventional commits to calculate sem-ver version strings.'
 
