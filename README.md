@@ -6,6 +6,8 @@ This is a PowerShell module that will make use of [Conventional Commits](https:/
 
 This module is distributed under the MIT license. See the [LICENSE] file for the full license.
 
+[License]: https://github.com/verizonconnect/powershell-conventional-commits/blob/master/LICENSE
+
 ## Contributing
 
 Pull requests are welcome.
