@@ -13,7 +13,11 @@ function Get-Version {
         "Patches"  = 0
     }
 
+    Write-Debug "Fetching the lastest release tag"
+
     $lastReleaseTag = Get-LastReleaseTag -CommitAnchor $commitAnchor
+
+    Write-Debug "Tag returned: $lastReleaseTag"
 
     if ($lastReleaseTag) {
         $lastVersionMatch = $lastReleaseTag -match '(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)'

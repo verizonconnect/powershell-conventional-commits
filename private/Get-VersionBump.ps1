@@ -7,6 +7,8 @@ function Get-VersionBump {
 
     [version] $newVersion = $CurrentVersion
 
+    Write-Debug "Get-VersionBump; calculating the new version starting from $CurrentVersion"
+    
     # Don't change major when in development mode
     if ($currentVersion.Major -eq 0) {
         if (($Changes.Breaking -gt 0) -or ($Changes.Feature -gt 0)) {
