@@ -9,6 +9,8 @@ function Get-CommitLogs {
 
     )
 
+    Write-Debug "Get-CommitLogs; from $From to: $To"
+
     $gitLogFormat = (@("%H", "%aI", "%s", "%b") -join ($LOG_FIELD_SEPARATOR)) + $LOG_COMMIT_DELIMITER;
 
     $gitLog = Invoke-Expression "git log --reverse --format=$gitLogFormat $($From)..$($To)"

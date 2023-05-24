@@ -10,6 +10,8 @@ function Get-Config {
         $Path = Join-Path -Path $PSScriptRoot -ChildPath 'conventional-commit-default.json'
     }
 
+    Write-Debug "Getting conventional commit config file from: $Path"
+
     if (Test-Path -Path $Path) {
         $jsonFile = Get-Content -Raw $Path | ConvertFrom-Json
     }

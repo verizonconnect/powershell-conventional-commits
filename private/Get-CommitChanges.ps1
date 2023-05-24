@@ -7,6 +7,8 @@ function Get-CommitChanges {
         [PSCustomObject] $Convention
     ) 
 
+    Write-Debug "Get-CommitChanges to summaries the commits changes."
+
     if (($CommitLog.BreakingChanges) -or ($CommitLog.ConventionalSubject.Breaking)) {
         $Changes.Breaking ++
     }
