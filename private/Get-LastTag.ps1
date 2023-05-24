@@ -14,6 +14,8 @@ function Get-LastTag {
         $returnedTag = $currentTag
     }
     elseif ($LASTEXITCODE -eq 128) {
+        $errorCaught = $Error[0].Exception.Message
+        Write-Debug "While getting the last tag; the following error occured ""$errorCaught"""
         $returnedTag = ''
     }
     else {
