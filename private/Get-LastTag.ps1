@@ -8,14 +8,14 @@ function Get-LastTag {
 
     $returnedTag = ''
 
-    $currentTag = Invoke-Expression "git describe --tags --match=$MatchPattern --exclude=$ExcludePattern --no-abbrev $CommitAnchor" 
+    $currentTag = Invoke-Expression "git describe --tags --match=$MatchPattern --exclude=$ExcludePattern --no-abbrev $CommitAnchor *>&1" 
 
     if ($LASTEXITCODE -eq 0) {
         $returnedTag = $currentTag
     }
     elseif ($LASTEXITCODE -eq 128) {
-        $errorCaught = $Error[0].Exception.Message
-        Write-Debug "While getting the last tag; the following error occured ""$errorCaught"""
+        #$currentTag now holds the error
+        Write-Debug "While getting the last tag; the following error occured ""$currentTag"""
         $returnedTag = ''
     }
     else {
