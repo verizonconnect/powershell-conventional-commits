@@ -17,6 +17,8 @@ function Get-CommitLogs {
 
     $gitLog = $gitLog -join "`r`n"
 
+    Write-Debug $gitLog
+
     $commitDetails = $gitLog -split $LOG_COMMIT_DELIMITER
 
     [array] $returnCommits = @()
@@ -30,6 +32,8 @@ function Get-CommitLogs {
             "Subject" = $commitArray[2]
             "Body"    = $commitArray[3]
         }
+
+        Write-Debug $commit
 
         if ($($commitArray[0]).replace("`r`n", '') -ne "") {
             $returnCommits += $commit
