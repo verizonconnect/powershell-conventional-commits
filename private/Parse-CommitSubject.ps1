@@ -35,6 +35,8 @@ function Parse-CommitSubject {
         Write-Debug "Unknown commit type ""$($conventialSubject.ConventionType)"""
     }
 
+    Write-Debug $conventialSubject 
+
     return $conventialSubject 
 
 }

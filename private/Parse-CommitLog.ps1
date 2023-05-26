@@ -17,6 +17,8 @@ function Parse-CommitLog {
     if ($CommitLog.Body -match '^BREAKING CHANGES?: *') {
         $ConventionalCommit.BreakingChanges = $subject.Description
     }
+
+    Write-Debug $ConventionalCommit
     
     return $ConventionalCommit
 }
