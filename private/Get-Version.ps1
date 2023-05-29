@@ -33,6 +33,8 @@ function Get-Version {
         foreach ($commitLog in $commitLogs) {
             $log = Parse-CommitLog -CommitLog $commitLog -Convention $Convention
 
+            Write-Debug $log
+
             $changes = Get-CommitChanges -CommitLog $log -Changes $changes -Convention $Convention
         }
 

@@ -26,7 +26,8 @@ function Get-LastTag {
                 $returnedTag = $currentTag
             }
             else {
-                Write-Debug "While getting the last tag; the following error occured ""$currentTag"""
+                Write-Debug "While getting the last tag; the following error occured ->""$currentTag"""
+                
                 $returnedTag = ''
             }
         }
