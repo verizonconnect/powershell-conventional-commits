@@ -5,7 +5,7 @@ function Get-Version {
         [PSCustomObject] $Convention
     )
 
-    [version] $version = New-Object Version -ArgumentList 0, 1, 0
+    [version] $version = New-Object Version -ArgumentList 0, 0, 1
 
     $changes = @{
         "Breaking" = 0
