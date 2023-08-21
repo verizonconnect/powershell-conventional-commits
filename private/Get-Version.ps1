@@ -20,13 +20,13 @@ function Get-Version {
     Write-Debug "Tag returned: $lastReleaseTag"
 
     if ($lastReleaseTag) {
-        $lastVersionMatch = $lastReleaseTag -match '(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)'
+        $lastVersionMatch = $lastReleaseTag -match '(?<major>\d+)\.(?<minor>\d+)(\.(?<patch>\d+))?'
 
         if (-not $lastVersionMatch) {
             throw "Couldn't find the semantic version from the last release tag $lastReleaseTag"
         }
 
-        $version = New-Object Version -ArgumentList $Matches.major, (IIf $Matches.minor $Matches.minor "0"), (IIf $Matches.patch $Matches.patch "0")
+        $version = New-Object Version -ArgumentList $Matches.major, $Matches.minor, $Matches.patch
 
         $commitLogs = Get-CommitLogs -From $lastReleaseTag -To $CommitAnchor
 
