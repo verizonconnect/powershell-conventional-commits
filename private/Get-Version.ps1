@@ -13,11 +13,11 @@ function Get-Version {
         "Patches"  = 0
     }
 
-    Write-Debug "Fetching the lastest release tag"
+    Write-Host "Fetching the lastest release tag"
 
     $lastReleaseTag = Get-LastReleaseTag -CommitAnchor $commitAnchor
 
-    Write-Debug "Tag returned: $lastReleaseTag"
+    Write-Host "Tag returned: $lastReleaseTag"
 
     if ($lastReleaseTag) {
         $lastVersionMatch = $lastReleaseTag -match '(?<major>\d+)\.(?<minor>\d+)(\.(?<patch>\d+))?'
@@ -30,17 +30,22 @@ function Get-Version {
 
         $commitLogs = Get-CommitLogs -From $lastReleaseTag -To $CommitAnchor
 
+        Write-Host "Getting commit information, $($commitLogs.count) commits found between tag ""$lastReleaseTag"" and ""$CommitAnchor""."
+
         foreach ($commitLog in $commitLogs) {
             $log = Parse-CommitLog -CommitLog $commitLog -Convention $Convention
 
-            Write-Debug $log
+            Write-Host $log
 
             $changes = Get-CommitChanges -CommitLog $log -Changes $changes -Convention $Convention
         }
 
-        Write-Debug $($changes | Out-String)
+        Write-Host "Changes detected:"
+        Write-Host $($changes | Out-String)
 
         $version = Get-VersionBump -CurrentVersion $version -Changes $changes
+
+        Write-Host "New version: $version"
     }
 
     return $version
